@@ -1,3 +1,2 @@
-*.exe
-*.o
-*.ko
+bin
+build
