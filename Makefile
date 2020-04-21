@@ -1,9 +1,11 @@
 g = g++
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall -Werror -c
 
-.PHONY: clean open
+.PHONY: clean run
 
-.bin/board: ./build/main.o ./build/draw.o ./build/source.o
+-include build/src/*.d
+
+.bin/source: ./build/main.o ./build/draw.o ./build/source.o
 		$(g) $(CFLAGS) -o ./bin/source ./build/main.o ./build/source.o ./build/draw.o -lm
 
 ./build/main.o: ./src/main.cpp ./src/header.h
@@ -16,10 +18,8 @@ CFLAGS = -Wall -Werror
 		$(g) $(CFLAGS) -o ./build/source.o -c ./src/source.cpp -lm
 
 clean:
-		rm -rf build bin
+		rm build/*.o
 
-open:
-		./bin/source
 
 run:
 		./bin/source
