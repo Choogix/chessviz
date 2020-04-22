@@ -1,28 +1,25 @@
 #include "header.h"
+#include <iomanip>
 #include <iostream>
-#include <math.h>
-#include <string>
-
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main()
 {
-    char turn[6];
-    int h = 0;
-    int move1 = 0, move2 = 0;
+    char pole[9][9]  = {{'8', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
+                        {'7', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+                        {'6', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {'5', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {'4', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {'3', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                        {'2', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
+                        {'1', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
+                        {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
+    Chessplace(pole);
 
-    char pole[9][9] = {{'1', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
-                       {'2', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-                       {'3', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {'4', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {'5', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {'6', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {'7', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-                       {'8', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
-                       {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
-
-    while (1) {
-        move_p(turn, h, move1, move2, pole);
+    while (true) {
+        move_p(pole);
         Chessplace(pole);
     }
     return 0;
