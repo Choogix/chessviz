@@ -20,7 +20,7 @@ all:	./bin/source
 		$(g) $(CFLAGS) -o ./build/source.o -c ./src/source.cpp -lm
 
 clean:
-		rm -rf *.o
+		rm -rf *.o *.d 
 
 run:
 		./bin/source
