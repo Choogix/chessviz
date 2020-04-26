@@ -13,7 +13,7 @@ all:	./bin/source.exe
 ./build/main.o: ./src/main.cpp ./src/header.h
 		$(g) $(CFLAGS) -o build/main.o -c src/main.cpp
 
-./build/draw.o: ./src/draw.cpp ./src/header.h build
+./build/draw.o: ./src/draw.cpp ./src/header.h
 		$(g) $(CFLAGS) -o ./build/draw.o -c ./src/draw.cpp
 
 ./build/source.o: ./src/source.cpp ./src/header.h
