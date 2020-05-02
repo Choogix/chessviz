@@ -15,11 +15,11 @@ int main()
                        {'3', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {'2', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
                        {'1', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
-                       {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
+                       {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'} };
+    int team = 0;
     Chessplace(pole);
-
     while (true) {
-        move_p(pole);
+        move_all(pole, &team);
         Chessplace(pole);
     }
     return 0;

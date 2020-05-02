@@ -1,5 +1,5 @@
 g = g++
-CFLAGS = -Wall -Werror -MP -MMD
+CFLAGS = -Wall -MP -MMD
 
 .PHONY: clean run all
 
@@ -18,6 +18,24 @@ all:	./bin/source.exe
 
 ./build/source.o: ./src/source.cpp ./src/header.h
 		$(g) $(CFLAGS) -o ./build/source.o -c ./src/source.cpp
+
+-include build/test/*.d
+
+GTEST_DIR = thirdparty/googletest
+
+test: testlib ./bin/source-test
+
+testlib:
+		$(g) $(CFLAGS) -isystem ${GTEST_DIR}/include -I${GTEST_DIR} \
+		-pthread -c ${GTEST_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
+		ar -rv build/test/libgtest.a build/test/gtest-all.o
+
+./bin/source-test: ./build/test/main.o
+		$(g) $(CFLAGS) -isystem ${GTEST_DIR}/include -pthread \
+		build/test/libgtest.a -o
+
+./build/test/test.o: test/main.cpp
+		$(g) $(CFLAGS) -I $(GTEST_DIR)/include -o
 
 clean:
 		rm -rf build/*.o build/*.d
