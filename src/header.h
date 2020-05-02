@@ -10,7 +10,8 @@
 using namespace std;
 
 void Chessplace(char pole[][9]);
-void move_p(char pole[][9]);
-int move_check(int x1, int x2, int y1, int y2, char pole[][9]);
+void move_all(char pole[][9], int* team);
+int move_check(int team, int x1, int x2, int y1, int y2, char pole[][9]);
+int friendly(int side, int x2, int y2, char pole[][9]);
 
 #endif
