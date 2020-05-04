@@ -1,6 +1,6 @@
 *.o
 *.exe
 *.d
+*.a
 /bin/source-test
-/build/test/libgtest.a
 /build/test/main
