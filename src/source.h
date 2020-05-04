@@ -1,5 +1,5 @@
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef SOURCE_H
+#define SOURCE_H
 
 #include <iomanip>
 #include <iostream>
