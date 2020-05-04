@@ -1,4 +1,4 @@
 *.exe
 *.d
 *.o
-test
+*.a
