@@ -2,5 +2,5 @@
 *.exe
 *.d
 *.a
-/bin/source-test
-/build/test/main
+/bin/
+/build/
