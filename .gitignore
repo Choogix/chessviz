@@ -2,5 +2,3 @@
 *.exe
 *.d
 *.a
-/bin/
-/build/
